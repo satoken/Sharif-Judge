@@ -201,6 +201,11 @@ class User_model extends CI_Model
 			// sending usernames and passwords by email
 			$this->load->library('email');
 			$config = array(
+				'protocol' => getenv('PROTOCOL') || 'mail',
+				'smtp_host' => getenv('SMTP_HOST'),
+				'smtp_port' => getenv('SMTP_PORT'),	
+				'smtp_user' => getenv('SMTP_USER'),
+				'smtp_pass' => getenv('SMTP_PASS'),
 				'mailtype'  => 'html',
 				'charset'   => 'iso-8859-1'
 			);
@@ -452,6 +457,11 @@ class User_model extends CI_Model
 		// send the email:
 		$this->load->library('email');
 		$config = array(
+			'protocol' => getenv('PROTOCOL') || 'mail',
+			'smtp_host' => getenv('SMTP_HOST'),
+			'smtp_port' => getenv('SMTP_PORT'),	
+			'smtp_user' => getenv('SMTP_USER'),
+			'smtp_pass' => getenv('SMTP_PASS'),
 			'mailtype'  => 'html',
 			'charset'   => 'iso-8859-1'
 		);
