@@ -39,7 +39,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= getenv('BASE_URL') || '';
+$config['base_url']	= getenv('BASE_URL') or '';
 
 /*
 |--------------------------------------------------------------------------

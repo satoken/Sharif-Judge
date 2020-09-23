@@ -201,7 +201,7 @@ class User_model extends CI_Model
 			// sending usernames and passwords by email
 			$this->load->library('email');
 			$config = array(
-				'protocol' => getenv('PROTOCOL') || 'mail',
+				'protocol' => getenv('PROTOCOL'),
 				'smtp_host' => getenv('SMTP_HOST'),
 				'smtp_port' => getenv('SMTP_PORT'),	
 				'smtp_user' => getenv('SMTP_USER'),
@@ -279,7 +279,7 @@ class User_model extends CI_Model
 		if ($this->db->trans_status()) {
 			// Delete submitted files
 			shell_exec("cd {$this->settings_model->get_setting('assignments_root')}; rm -r */*/{$username};");
-			return TRUE; //success
+			return TRUE; //succes
 		}
 		return FALSE; // failure
 	}
@@ -457,7 +457,7 @@ class User_model extends CI_Model
 		// send the email:
 		$this->load->library('email');
 		$config = array(
-			'protocol' => getenv('PROTOCOL') || 'mail',
+			'protocol' => getenv('PROTOCOL'),
 			'smtp_host' => getenv('SMTP_HOST'),
 			'smtp_port' => getenv('SMTP_PORT'),	
 			'smtp_user' => getenv('SMTP_USER'),
